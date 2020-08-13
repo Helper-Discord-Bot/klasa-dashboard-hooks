@@ -22,7 +22,7 @@ module.exports = class extends Route {
 	}
 
 	async get(request, response) {
-		let dashboardUser = this.client.dashboardUsers.get(request.auth.scope[0]);
+		let dashboardUser = this.client.dashboardUsers.cache.get(request.auth.scope[0]);
 
 		if (!dashboardUser) {
 			dashboardUser = await this.api(request.auth.token);
@@ -36,7 +36,8 @@ module.exports = class extends Route {
 	}
 
 	async post(request, response) {
-		const botUser = await this.client.users.fetch(request.body.id);
+		await this.client.users.fetch(request.body.id).catch(() => null)
+		const botUser = await this.client.users.cache.get(request.body.id);
 		const updated = await botUser.settings.update(request.body.data, { action: 'overwrite' });
 		const errored = Boolean(updated.errors.length);
 
