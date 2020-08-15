@@ -1,6 +1,6 @@
 {
   "name": "klasa-dashboard-hooks",
-  "version": "0.0.2-dev",
+  "version": "0.0.3-dev",
   "description": "Klasa Dashboard Hooks: a simple plugin for the klasa bot framework that exposes an api for use in a frontend framework.",
   "homepage": "https://klasa.js.org/",
   "bugs": {
