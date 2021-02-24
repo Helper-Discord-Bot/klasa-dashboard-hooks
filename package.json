@@ -24,7 +24,7 @@
   },
   "peerDependencies": {
     "discord.js": "^12.5.0",
-    "klasa": "github:dirigeants/klasa#master"
+    "klasa": "github:helperdiscord/klasa"
   },
   "devDependencies": {
     "@types/node": "^12.6.3",
