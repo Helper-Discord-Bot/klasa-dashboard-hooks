@@ -91,6 +91,7 @@ class Server {
 		request.path = info.pathname;
 		request.search = info.search;
 		request.query = info.query;
+		response.client = this.client;
 
 		try {
 			await this.client.middlewares.run(request, response, route);
