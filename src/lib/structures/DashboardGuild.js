@@ -69,7 +69,7 @@ class DashboardGuild {
 		 * @since 0.0.1
 		 * @type {external:Permissions}
 		 */
-		this.userGuildPermissions = new Permissions(guild.permissions);
+		this.userGuildPermissions = new Permissions(BigInt(guild.permissions));
 
 		/**
 		 * If the logged in OAuthUser can manage the guild (invite bots)
